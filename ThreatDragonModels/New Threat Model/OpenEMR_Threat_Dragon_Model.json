@@ -1,0 +1,673 @@
+{
+  "summary": {
+    "title": "OpenEMR Data Flow Diagram",
+    "owner": "Keeton Fick",
+    "description": "Threat Dragon STRIDE diagram for OpenEMR with required interactors, processes, data stores, trust boundaries, and data flows."
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "ChatGPT"
+      }
+    ],
+    "diagrams": [
+      {
+        "title": "OpenEMR",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "diagramType": "STRIDE",
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 40,
+                "y": 40
+              },
+              "angle": 0,
+              "id": "aa179604-bb47-4caf-9866-205fe82bfd8f",
+              "z": 1,
+              "hasOpenThreats": false,
+              "description": "Patient using a browser or portal client to access OpenEMR.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Patient"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 40,
+                "y": 200
+              },
+              "angle": 0,
+              "id": "9eeecd80-400d-48e6-88c8-a9e90a6d03b6",
+              "z": 2,
+              "hasOpenThreats": false,
+              "description": "Physician, nurse, or staff user accessing OpenEMR through the web UI.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Clinician"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 40,
+                "y": 360
+              },
+              "angle": 0,
+              "id": "cae95054-ba56-4d59-a122-90e0a938fbe3",
+              "z": 3,
+              "hasOpenThreats": false,
+              "description": "Administrator managing users, configuration, backups, and maintenance.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "System Admin"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 300,
+                "y": 170
+              },
+              "angle": 0,
+              "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1",
+              "z": 4,
+              "hasOpenThreats": false,
+              "description": "OpenEMR web application handling HTTP requests, forms, and API traffic.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Web UI / API"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 520,
+                "y": 70
+              },
+              "angle": 0,
+              "id": "879eeb93-8c7b-4276-a6ae-7d0e62b5ff9a",
+              "z": 5,
+              "hasOpenThreats": false,
+              "description": "Authentication, authorization, session handling, and access control checks.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Auth & Session"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 520,
+                "y": 280
+              },
+              "angle": 0,
+              "id": "416ac7f6-63d3-4848-8757-27b197eebad0",
+              "z": 6,
+              "hasOpenThreats": false,
+              "description": "Clinical workflows such as patient records, scheduling, orders, billing, and document handling.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "EHR / Orders"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 800,
+                "y": 120
+              },
+              "angle": 0,
+              "id": "61cc38e7-d8c2-4fe3-90b5-3667419a0bfa",
+              "z": 7,
+              "hasOpenThreats": false,
+              "description": "Primary database storing users, patient records, appointments, billing, and configuration.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "OpenEMR DB"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 800,
+                "y": 320
+              },
+              "angle": 0,
+              "id": "1b0332e6-7890-400b-9f5a-6acebd540207",
+              "z": 8,
+              "hasOpenThreats": false,
+              "description": "Audit trail, uploaded files, scanned documents, and other persistent artifacts.",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Audit Logs / Docs"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 245,
+                "y": 20
+              },
+              "target": {
+                "x": 690,
+                "y": 20
+              },
+              "vertices": [
+                {
+                  "x": 230,
+                  "y": 460
+                },
+                {
+                  "x": 690,
+                  "y": 460
+                }
+              ],
+              "id": "bcb273d5-be83-4142-b04f-65072a5c8457",
+              "z": 9,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 730,
+                "y": 40
+              },
+              "target": {
+                "x": 980,
+                "y": 40
+              },
+              "vertices": [
+                {
+                  "x": 730,
+                  "y": 430
+                },
+                {
+                  "x": 980,
+                  "y": 430
+                }
+              ],
+              "id": "2c45e16c-86dc-459c-b9c6-89cd203f49cb",
+              "z": 10,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "aa179604-bb47-4caf-9866-205fe82bfd8f"
+              },
+              "target": {
+                "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1"
+              },
+              "vertices": [
+                {
+                  "x": 180,
+                  "y": 90
+                }
+              ],
+              "id": "0307437a-07ef-47a7-9f36-21f8c0a656f7",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Portal requests",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 11,
+              "hasOpenThreats": false,
+              "description": "Patient submits portal requests, messages, and record views over HTTPS.",
+              "protocol": "HTTPS",
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "9eeecd80-400d-48e6-88c8-a9e90a6d03b6"
+              },
+              "target": {
+                "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1"
+              },
+              "vertices": [
+                {
+                  "x": 190,
+                  "y": 240
+                }
+              ],
+              "id": "1feb7245-347f-4d17-a51a-d344aa73a2bc",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Clinical UI requests",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 12,
+              "hasOpenThreats": false,
+              "description": "Clinician sends web requests for charting, scheduling, orders, and billing.",
+              "protocol": "HTTPS",
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "cae95054-ba56-4d59-a122-90e0a938fbe3"
+              },
+              "target": {
+                "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1"
+              },
+              "vertices": [
+                {
+                  "x": 200,
+                  "y": 390
+                }
+              ],
+              "id": "48436a0f-344f-4377-ac9c-7ef36f236271",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Admin requests",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
+              "description": "Administrator performs configuration and user-management actions.",
+              "protocol": "HTTPS",
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1"
+              },
+              "target": {
+                "id": "879eeb93-8c7b-4276-a6ae-7d0e62b5ff9a"
+              },
+              "vertices": [
+                {
+                  "x": 460,
+                  "y": 130
+                }
+              ],
+              "id": "ea04c19d-fd5b-414d-8976-ba9ed86bed9a",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Credentials / session checks",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 14,
+              "hasOpenThreats": false,
+              "description": "Web tier sends login credentials and authorization checks to the authentication component.",
+              "protocol": "Internal HTTPS",
+              "isPublicNetwork": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "879eeb93-8c7b-4276-a6ae-7d0e62b5ff9a"
+              },
+              "target": {
+                "id": "61cc38e7-d8c2-4fe3-90b5-3667419a0bfa"
+              },
+              "vertices": [
+                {
+                  "x": 690,
+                  "y": 90
+                }
+              ],
+              "id": "e997b632-c821-4215-b8f8-4998599dd4d8",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "User / role lookup",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 15,
+              "hasOpenThreats": false,
+              "description": "Authentication component queries stored user accounts, password hashes, MFA data, and RBAC settings.",
+              "protocol": "SQL/TLS",
+              "isPublicNetwork": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "c6b9d6f5-2f69-4506-8068-227f2fe86bc1"
+              },
+              "target": {
+                "id": "416ac7f6-63d3-4848-8757-27b197eebad0"
+              },
+              "vertices": [
+                {
+                  "x": 470,
+                  "y": 240
+                }
+              ],
+              "id": "ba5bd6e9-d3fd-41a5-a5ff-9f9e9d145feb",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Clinical transactions",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 16,
+              "hasOpenThreats": false,
+              "description": "Validated web requests are forwarded to the clinical/business logic component.",
+              "protocol": "Internal HTTPS",
+              "isPublicNetwork": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "416ac7f6-63d3-4848-8757-27b197eebad0"
+              },
+              "target": {
+                "id": "61cc38e7-d8c2-4fe3-90b5-3667419a0bfa"
+              },
+              "vertices": [
+                {
+                  "x": 700,
+                  "y": 230
+                }
+              ],
+              "id": "0258b674-c92e-441f-b122-fa5c2fc58104",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Read/write EHR data",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 17,
+              "hasOpenThreats": false,
+              "description": "Clinical component reads and writes patient records, orders, appointments, and billing data.",
+              "protocol": "SQL/TLS",
+              "isPublicNetwork": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "416ac7f6-63d3-4848-8757-27b197eebad0"
+              },
+              "target": {
+                "id": "1b0332e6-7890-400b-9f5a-6acebd540207"
+              },
+              "vertices": [
+                {
+                  "x": 690,
+                  "y": 350
+                }
+              ],
+              "id": "1819ce7f-4492-4239-b812-88ce552ca5ee",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Audit / documents",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 18,
+              "hasOpenThreats": false,
+              "description": "Clinical component writes audit entries and stores/retrieves uploaded documents.",
+              "protocol": "TLS",
+              "isPublicNetwork": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 560,
+          "width": 1100
+        }
+      }
+    ],
+    "reviewer": "CSC 515 Project"
+  }
+}
